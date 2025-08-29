@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Carta para ti</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      overflow: hidden;
+    }
+    .container {
+      text-align: center;
+    }
+    button {
+      padding: 15px 30px;
+      font-size: 18px;
+      background: #ff4b5c;
+      border: none;
+      color: white;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: 0.3s;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+    button:hover {
+      background: #ff2e44;
+      transform: scale(1.05);
+    }
+    .carta {
+      display: none;
+      margin-top: 30px;
+      max-width: 600px;
+      background: white;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+      animation: aparecer 1s forwards;
+    }
+    @keyframes aparecer {
+      from { opacity: 0; transform: translateY(50px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <button onclick="abrirCarta()">💌 Abrir la carta</button>
+    <div id="carta" class="carta">
+      <p>
+        Hoy sentí la necesidad de escribirte porque a veces lo que siento por ti es tan grande que no cabe en mis palabras. 
+        Quiero que sepas que te amo, y que ese amor no es un simple sentimiento pasajero, sino una fuerza que me acompaña en todo momento. 
+        Desde que llegaste a mi vida, descubrí que amar no es solo decirlo, es demostrarlo en cada detalle, en cada pensamiento, en cada instante que compartimos.
+      </p>
+      <p>
+        Amarte es despertar cada día con una razón para sonreír. Es sentir que la vida tiene más colores, más música y más sentido cuando estás cerca. 
+        Tú eres mi paz cuando el mundo se vuelve ruidoso, mi inspiración cuando me siento sin fuerzas, y mi alegría cuando parece que todo pesa demasiado.
+      </p>
+      <p>
+        Quiero que sepas que mi amor por ti no depende de las circunstancias ni de los días buenos o malos. 
+        Es un amor que crece, que aprende, que se fortalece con cada momento vivido. 
+        No es perfecto, porque yo no lo soy, pero es sincero, profundo y eterno. 
+        Prometo cuidarlo siempre, porque sé lo valioso que es tenerte en mi vida.
+      </p>
+      <p>
+        Gracias, amor, por ser como eres: por tu risa que ilumina mis días, por tus palabras que me llenan de calma, 
+        por tu manera única de hacerme sentir amado y comprendido. 
+        No sabes cuánto significa para mí tenerte, cuánto valoro cada segundo a tu lado.
+      </p>
+      <p>
+        Quiero un futuro contigo, lleno de sueños cumplidos, de momentos felices y de la certeza de que, pase lo que pase, siempre nos tendremos el uno al otro. 
+        Porque amarte es mi destino, mi elección y mi mayor felicidad.
+      </p>
+    </div>
+  </div>
+
+  <!-- música -->
+  <audio id="musica" src="voy_a_amarte.mp3"></audio>
+
+  <script>
+    function abrirCarta() {
+      document.getElementById('carta').style.display = 'block';
+      document.querySelector('button').style.display = 'none';
+      document.getElementById('musica').play();
+    }
+  </script>
+</body>
+</html>
